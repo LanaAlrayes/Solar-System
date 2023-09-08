@@ -1,0 +1,156 @@
+html{
+    width: 100%;
+}
+body{
+    height: 100%;
+    margin: 0; 
+    background: #000 radial-gradient(#555, #000);
+    overflow: hidden;
+}
+.stars{
+    position: fixed;
+    z-index: -1;
+    background-image: url(image/stars.png );
+    width: 100%;
+    height: 100%;
+    animation: move 30s linear infinite;
+}
+.stars:nth-of-type(2) {
+    left: -100%;
+    animation: move 30s linear infinite;
+}
+.sun{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    background-color: orange;
+    background-image: radial-gradient(#f5c313, #ec7e08);
+}
+.sun1{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    box-shadow: 0 0 50px #f5c91a;
+    animation: animation-sun1 10s linear infinite alternate ;
+}
+.box {
+    width: 320px;
+    height: 320px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: animation 13s linear infinite;
+}
+.earth{
+width:75px;
+height: 75px;
+background:url(image/download1.jpg);
+background-size: cover;
+position: absolute;
+transform: translate(-50%, -50%);
+border-radius: 50%;
+animation: animation 9s linear infinite;
+}
+.planel{
+width:100px;
+height:100px;
+position: absolute;
+transform: translate(-50%, -50%);
+animation: animation 4s  linear reverse infinite;
+animation-delay: -6s;
+}
+.moon{
+    height:20px;
+    width: 20px;
+    background:url(image/download\ \(2\).jpg);
+    background-size: cover;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+.stars span{
+    position:absolute;
+    top: 25%;
+    left: 25%;
+    width: 2px;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(255,225,225,0.1) ,
+     0 0 0 8px rgba(255,225,225,0.1) ,
+     0 0 20px rgba(255,225,225,1);
+     animation: animationspan 3s linear infinite;
+}
+span::before{
+    content: '';
+    position:absolute;
+    top:50%;
+    transform: translateY(-50%);
+    width: 300px;
+    height: 1px;
+    background: linear-gradient(90deg,#fff,transparent);
+}
+span:nth-child(1){
+    top: 0;
+    right: 80px;
+    left: initial;
+    animation-delay: 0.2s;
+    animation-duration: 3s;
+}
+span:nth-child(2){
+    top: 80px;
+    right: 0;
+    left: initial;
+    animation-delay: 0.4s;
+    animation-duration: 2s;
+}
+span:nth-child(3){
+    top: 0;
+    right: 600px;
+    left: initial;
+    animation-delay: 0.4s;
+    animation-duration: 2s;
+}
+@keyframes animationspan {
+    0% {
+        transform: rotate(315deg) translate(0) ;
+        opacity: 1;
+       }
+    70%{
+        opacity: 1;
+    }
+    100%{
+        transform: rotate(315deg) translate(-1000px) ;
+    opacity: 0;
+    }
+}
+@keyframes move{
+    from {
+        opacity: 0;
+        transform: translateX(0);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(100px);
+      }
+}
+@keyframes animation-sun1 {
+   100%{
+       box-shadow: 0 0 200px #f5c91a;
+   }
+}
+@keyframes animation {
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
